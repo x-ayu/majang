@@ -1,7 +1,7 @@
 #include<conio.h>
 #include<stdio.h>
 #include<stdlib.h>
-#include"C:\Users\11394\source\repos\Proj\Proj\masd.h"
+#include"masd.h"
 
 struct names	 _Interface(void) {
 	char RRWar[] = { "1.人人对战" };
@@ -75,7 +75,7 @@ struct names	 _Interface(void) {
 		
 	}
 	struct  names name;
-	name.Mode == Output2;
+	name.Mode = Output2;
 	if (Output2 == 1) {
 		system("cls");
 		printf("选择了人人对战\n输入玩家1姓名：");scanf_s("%s", &name.PlayersName1,24);
@@ -92,7 +92,7 @@ struct names	 _Interface(void) {
 	while (Output1)
 		{
 		    system("cls");
-			static i =1 ;
+			static int i =1 ;
 			printf("输入玩家%d姓名：", i);
 			if (i == 1)
 				scanf_s("%s", &name.PlayersName1, 24);
