@@ -24,6 +24,9 @@
     <ClCompile Include="..\..\..\Proj\Proj\源2.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="源3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Proj\Proj\masd.h">
