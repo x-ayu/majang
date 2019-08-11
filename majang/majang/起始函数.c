@@ -1,10 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-//#include"C:\Users\11394\source\repos\Proj\Proj\masd.h"
+#include"masd.h"
 #include <ctype.h>
 
 int main(void)
 {
-	_Interface();
+	//_Interface();
+	char sd[20];
+	AloneRandom(20, sd);
 }

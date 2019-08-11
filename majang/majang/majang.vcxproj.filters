@@ -15,17 +15,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Proj\Proj\源.c">
+    <ClCompile Include="起始函数.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Proj\Proj\源1.c">
+    <ClCompile Include="生成随机数列.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Proj\Proj\源2.c">
+    <ClCompile Include="输出控制.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源3.c">
-      <Filter>源文件</Filter>
+    <ClCompile Include="初始界面.c">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

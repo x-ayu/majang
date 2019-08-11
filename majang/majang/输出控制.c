@@ -1,11 +1,11 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
-#include"C:\Users\11394\source\repos\Proj\Proj\masd.h"
+#include"masd.h"
 
 int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intInitial, int intEnd)
 {
-	int Input1, Input2 = 0, Output1 = '\40', Output2 = 1;
+	int Input1, Input2 = 0,  Output2 = 1;
 	if (bWay == 0)//œÚ…œ£ª
 	{
 		for (int i = 0; i < intNumber; i++)
@@ -14,7 +14,7 @@ int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intIniti
 		}
 		for (int i = 0; i < intNumber; i++)
 		{
-			if (i == 0) printf("      ", Output[i]);
+			if (i == 0) printf("      ");
 			if (i != 0) printf("%s    ", Output[i]);
 		}
 		printf("\n");
