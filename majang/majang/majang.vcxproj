@@ -154,7 +154,6 @@
     <ClCompile Include="..\..\..\Proj\Proj\源.c" />
     <ClCompile Include="..\..\..\Proj\Proj\源1.c" />
     <ClCompile Include="..\..\..\Proj\Proj\源2.c" />
-    <ClCompile Include="majang.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Proj\Proj\masd.h" />
