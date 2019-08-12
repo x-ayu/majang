@@ -6,6 +6,7 @@
 int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intInitial, int intEnd)
 {
 	int intInput1, intInput = 0,  intOutput = 1;
+
 	if (bWay == 0)//向上；
 	{
 		for (int i = 0; i < intNumber; i++)
@@ -18,6 +19,7 @@ int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intIniti
 			if (i != 0) printf("%s    ", Output[i]);
 		}
 		printf("\n");
+
 		for (;;)
 		{
 			for (;;)
@@ -48,19 +50,22 @@ int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intIniti
 				else printf("      ");
 			}printf("\n");
 		}
-}
-	if (bWay == 1) {//向右
 	}
+	if (bWay == 1) {//向右
+		fprintf(stderr, "功能暂未实现，尽情期待");
+		goto L_Err;
+	}
+
 	if (bMode == 1) {//指定位置向上
 		for (int i = 0; i <= intEnd; i++) {
-			if (i < intInitial)printf("      ");
-			else printf("%s    ", Output[i]);
+			(i < intInitial)? printf("      "): printf("%s    ", Output[i]);	
 		}
 		printf("\n");
 		for (int i = 0; i <= intEnd; i++) {
-			if (i >= intInitial && i <= intEnd)printf("      ");
-			else printf("%s    ", Output[i]);
+			(i >= intInitial && i <= intEnd) ? printf("      ") : printf("%s    ", Output[i]);
 		}
 	}
+
+L_Err:
 	return intOutput;
 }

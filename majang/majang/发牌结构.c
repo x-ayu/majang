@@ -1,10 +1,12 @@
 #include"masd.h"
 #include<stdio.h>
-struct SOUP Distribute(int *Han)
+
+SOUP Distribute(int *Han)
 {
 	static int inX = 0;
-	struct SOUP Sards;
+	SOUP Sards = {0};
 	int inY = Han[inX] / 4;
+
 	if (inY == 0)
 	{
 		Sards.inSerial = 1;
@@ -175,6 +177,7 @@ struct SOUP Distribute(int *Han)
 		Sards.inSerial = 0;
 		Sards.chSign = 'F';
 	}
+
 	inX++;
 	return Sards;
 }
