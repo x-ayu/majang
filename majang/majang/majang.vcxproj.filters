@@ -30,6 +30,9 @@
     <ClCompile Include="发牌结构.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="排序.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="masd.h">

@@ -5,7 +5,7 @@
 
 int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intInitial, int intEnd)
 {
-	int Input1, Input2 = 0,  Output2 = 1;
+	int intInput1, intInput = 0,  intOutput = 1;
 	if (bWay == 0)//œÚ…œ£ª
 	{
 		for (int i = 0; i < intNumber; i++)
@@ -22,29 +22,29 @@ int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intIniti
 		{
 			for (;;)
 			{
-				Input1 = _getch();
-				if (Input1 == 13) break;
-				Input2 = _getch();
-				if (Input1 == 224) { if ((Input2 == 75) || (Input2 == 77))break; }
+				intInput1 = _getch();
+				if (intInput1 == 13) break;
+				intInput = _getch();
+				if (intInput1 == 224) { if ((intInput == 75) || (intInput == 77))break; }
 			}
-			if (Input1 == 13)break;
-			if ((Input2 == 77) && Output2 < intNumber)
+			if (intInput1 == 13)break;
+			if ((intInput == 77) && intOutput < intNumber)
 			{
-				Output2++;
+				intOutput++;
 			}
-			else if ((Input2 == 75) && Output2 > 1) {
-				Output2--;
+			else if ((intInput == 75) && intOutput > 1) {
+				intOutput--;
 			}
 			system("cls");
 			for (int i = 0; i < intNumber; i++)
 			{
-				if (i == Output2 - 1)printf("%s    ", Output[i]);
+				if (i == intOutput - 1)printf("%s    ", Output[i]);
 				else printf("      ");
 			}
 			printf("\n");
 			for (int i = 0; i < intNumber; i++)
 			{
-				if (i != Output2 - 1)printf("%s    ", Output[i]);
+				if (i != intOutput - 1)printf("%s    ", Output[i]);
 				else printf("      ");
 			}printf("\n");
 		}
@@ -62,5 +62,5 @@ int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intIniti
 			else printf("%s    ", Output[i]);
 		}
 	}
-	return Output2;
+	return intOutput;
 }

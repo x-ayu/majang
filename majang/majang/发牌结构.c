@@ -1,9 +1,9 @@
 #include"masd.h"
 #include<stdio.h>
-struct Soup Distribute(int *Han)
+struct SOUP Distribute(int *Han)
 {
 	static int inX = 0;
-	struct Soup Sards;
+	struct SOUP Sards;
 	int inY = Han[inX] / 4;
 	if (inY == 0)
 	{

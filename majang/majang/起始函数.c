@@ -3,7 +3,7 @@
 #include<time.h>
 #include"masd.h"
 #include <ctype.h>
-int  FaPi(struct Soup namm[13],int as)
+int  FaPi(struct SOUP namm[13],int as)
 {
 	for (int i = 0;; i++)
 	{
@@ -16,14 +16,14 @@ int main(void)
 {
 	int as[136];
 	AloneRandom(136,as);
-	struct names  WJ;
+	struct NAMES  WJ;
 	WJ = _Interface();
-	struct Soup name1[13];
-	struct Soup name2[13];
-	struct Soup name3[13];
-	struct Soup name4[13];
-	FaPi(name1,as); printf("\n");
-	FaPi(name2,as); printf("\n");
-	FaPi(name3,as); printf("\n");
-	FaPi(name4,as); printf("\n");
+	struct SOUP pName1[13];
+	struct SOUP pName2[13];
+	struct SOUP pName3[13];
+	struct SOUP pName4[13];
+	FaPi(pName1,as); printf("\n");
+	FaPi(pName2,as); printf("\n");
+	FaPi(pName3,as); printf("\n");
+	FaPi(pName4,as); printf("\n");
 }

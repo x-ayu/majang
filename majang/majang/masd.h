@@ -1,20 +1,20 @@
 //用于函数，结构的定义
 //#pragma once
 #include<stdbool.h>
-struct names
+struct NAMES
 {
-	int Mode;
-	char PlayersName1[25];
-	char PlayersName2[25];
-	char PlayersName3[25];
-	char PlayersName4[25];
+	int intMode;
+	char szPlayersName1[25];
+	char szPlayersName2[25];
+	char szPlayersName3[25];
+	char szPlayersName4[25];
 };
-struct Soup
+struct SOUP
 {
 	char inSerial;
 	char  chSign;
 };
-struct names	 _Interface(void);
+struct NAMES	 _Interface(void);
 int ChOutput(char* [], int, bool, bool, int, int);
 int* AloneRandom(int, int*);
-struct Soup Distribute(char* Han);
+struct SOUP Distribute(char* Han);

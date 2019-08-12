@@ -4,43 +4,43 @@
 int* AloneRandom(int  number, int* Target)
 {
 	srand(clock());
-	int num1, num2=0,num3=0;
-	int * numb1;
-	numb1 = (int*)malloc(sizeof(int)*number);
-	if (numb1 == NULL)
+	int intNum1, intNum2=0,intNum3=0;
+	int * pNumb1;
+	pNumb1 = (int*)malloc(sizeof(int)*number);
+	if (pNumb1 == NULL)
 	{
 		exit(1);
 	}
 	for (size_t i = 0; i < number; i++)
 	{
-		*(numb1 + i) = 1;
+		*(pNumb1 + i) = 1;
 	}
 	for(int fg=0;;fg++)
 	{
 		if (number == 0)
 		{
-			num1 = 1;
+			intNum1 = 1;
 			number--;
 		}
 		else
 		{
-			num1 = rand() % number + 1;
+			intNum1 = rand() % number + 1;
 			number--;
 		};
 		if (number == -1)break;
 		for (;;) {
-				num2 += numb1[num3];
-				num3++;
-			if (num1 == num2) {
-				Target[fg] = num3 - 1;
-				numb1[--num3] = 0;
-				num2 = 0;
-				num3 = 0;
+				intNum2 += pNumb1[intNum3];
+				intNum3++;
+			if (intNum1 == intNum2) {
+				Target[fg] = intNum3 - 1;
+				pNumb1[--intNum3] = 0;
+				intNum2 = 0;
+				intNum3 = 0;
 				break;
 			}
 		}
 	}
-	free(numb1);
+	free(pNumb1);
 	return*Target;
 
 }
