@@ -27,9 +27,12 @@
     <ClCompile Include="初始界面.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="发牌结构.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Proj\Proj\masd.h">
+    <ClInclude Include="masd.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

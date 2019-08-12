@@ -15,9 +15,8 @@ int* AloneRandom(int  number, int* Target)
 	{
 		*(numb1 + i) = 1;
 	}
-	while(1)//不能确定fg的大小，不用for
+	for(int fg=0;;fg++)
 	{
-		static int fg = 0;
 		if (number == 0)
 		{
 			num1 = 1;
@@ -40,10 +39,8 @@ int* AloneRandom(int  number, int* Target)
 				break;
 			}
 		}
-		printf("%d ", Target[fg]);
-		fg++;
-		free(numb1);
 	}
+	free(numb1);
 	return*Target;
 
 }

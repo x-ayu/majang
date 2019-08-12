@@ -152,12 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="初始界面.c" />
+    <ClCompile Include="发牌结构.c" />
     <ClCompile Include="生成随机数列.c" />
     <ClCompile Include="起始函数.c" />
     <ClCompile Include="输出控制.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Proj\Proj\masd.h" />
+    <ClInclude Include="masd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
