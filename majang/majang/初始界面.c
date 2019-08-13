@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include"masd.h"
 
-struct NAMES	 _Interface(void) {
+    NAMES	 _Interface(void) {
 	char szRRWar[] = { "1.人人对战" };
 	char szRJWar[] = { "2.人机对战" };
 	char szPlayback[] = { "3.历史回放" };
@@ -74,7 +74,7 @@ struct NAMES	 _Interface(void) {
 		}
 		
 	}
-	struct  NAMES name;
+	NAMES name;
 	name.intMode = intOutput;
 	if (intOutput == 1) {
 		system("cls");
@@ -87,8 +87,7 @@ struct NAMES	 _Interface(void) {
 		system("cls");
 		printf("选择了人机对战\n");
 		char* nas[4] = { {"1"},{"2"},{"3"},{"4"} };
-		
-	intOutput1= ChOutput(nas, 4, 0, 0, 1, 3);
+	intOutput1= ChOutput(nas, 4, 0, 1, 1, 3);
 	while (intOutput1)
 		{
 		    system("cls");

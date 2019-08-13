@@ -3,8 +3,15 @@
 #include<stdlib.h>
 #include"masd.h"
 
-int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intInitial, int intEnd)
+int ChOutput(char Output[13][3],int intNumber, _Bool bWay, _Bool bMode, int intInitial, int intEnd)
 {
+	if (intNumber == 4)
+	{
+		Output[0][0] = '1', Output[0][1]='\0';
+		Output[1][0] = '2', Output[1][1] = '\0';
+		Output[2][0] = '3', Output[2][1] = '\0';
+		Output[3][0] = '4', Output[3][1] = '\0';
+	}
 	int intInput1, intInput = 0,  intOutput = 1;
 	if (bWay == 0)//ÏòÉÏ£»
 	{
@@ -35,7 +42,7 @@ int ChOutput(char* Output[],int intNumber, _Bool bWay, _Bool bMode, int intIniti
 			else if ((intInput == 75) && intOutput > 1) {
 				intOutput--;
 			}
-			system("cls");
+		//	system("cls");
 			for (int i = 0; i < intNumber; i++)
 			{
 				if (i == intOutput - 1)printf("%s    ", Output[i]);

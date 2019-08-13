@@ -3,33 +3,29 @@
 #include<time.h>
 #include"masd.h"
 #include <ctype.h>
-int  FaPi(struct SOUP namm[13],int as)
+void FaPi(SOUP namm[13],int as)
 {
 	for (int i = 0;; i++)
 	{
 		namm[i] = Distribute(as);
-		if (i == 12)break;
-		printf(" %d%c", namm[i].inSerial, namm[i].chSign);
+		if (i == 13)break;
 	}
 }
 int main(void)
 {
 	int as[136];
-	AloneRandom(136,as);
-	struct NAMES  WJ;
+	AloneRandom(136, as);
+	 NAMES  WJ;
 	WJ = _Interface();
-	char pszSoupa1[13][2], pszSoupa2[13][2], pszSoupa3[13][2], pszSoupa4[13][2] ;
-	struct SOUP pName1[13];
-	struct SOUP pName2[13];
-	struct SOUP pName3[13];
-	struct SOUP pName4[13];
-	FaPi(pName1,as); printf("\n");
-	FaPi(pName2,as); printf("\n");
-	FaPi(pName3,as); printf("\n");
-	FaPi(pName4,as); printf("\n");
-	pszSoupa1[13][2] = Sequence(pName1); printf("\n");
-	Sequence(pName2); printf("\n");
-	Sequence(pName3); printf("\n");
-	Sequence(pName4); printf("\n");
-	ChOutput(pszSoupa1, 13, 0, 0, 0, 0);
+	 SOUP pName1[13];
+	 SOUP pName2[13];
+	 SOUP pName3[13];
+	 SOUP pName4[13];
+	FaPi(pName1, as); FaPi(pName2, as); FaPi(pName3, as); FaPi(pName4, as); //为每个玩家发牌
+	Sequence(pName1); Sequence(pName2);Sequence(pName3); Sequence(pName4); //调整手牌序列
+	if (WJ.intMode == 1)
+	{
+
+	}
+	return 0;
 }
