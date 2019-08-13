@@ -85,9 +85,9 @@
 	}
 	if (intOutput == 2)   {
 		system("cls");
-		printf("选择了人机对战\n");
+		printf("选择了人机对战\n选择玩家数目：\n");
 		char* nas[4] = { {"1"},{"2"},{"3"},{"4"} };
-	intOutput1= ChOutput(nas, 4, 0, 1, 1, 3);
+	intOutput1= ChOutput(nas, 4, 0, 1, 1, 3,NULL);
 	while (intOutput1)
 		{
 		    system("cls");

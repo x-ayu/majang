@@ -12,15 +12,15 @@ int Compare(const void* p1, const void* p2)//用于qsort函数
 	else
 		return -1;
 }
-void Sequence( SOUP *pName)
+void Sequence( SOUP *pName,char* pGameSerial)
 {
 	int (*ph)(const void* , const void* );
 	ph = Compare;
-	char chSort[13][3];
+	char chSort[14][3];
 	int inTemporary = 0;
 	int intWNum = 0, intTNum = 0, intLNum = 0;
-	int szintNum[13];
-	for (int i=0; i < 13; i++)
+	int szintNum[14];
+	for (int i=0; i < 14; i++)
 	{
 		chSort[i][0] = pName[i].inSerial;
 		chSort[i][1] = pName[i].chSign;
@@ -128,22 +128,22 @@ void Sequence( SOUP *pName)
 			}
 			if (inTemporary == 13)break;
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < 14; i++)
 		{
 			chSort[i][0] = pName[i].inSerial;
 			chSort[i][1] = pName[i].chSign;
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < 14; i++)
 		{
 			szintNum[i] = chSort[i][0];
 		}
 		qsort(szintNum, intWNum, sizeof(int), ph);
 		qsort(&szintNum[intWNum], intTNum, sizeof(int), ph);
 		qsort(&szintNum[intWNum+intTNum], intLNum, sizeof(int), ph);
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < 14; i++)
 		{
 			pName[i].inSerial = szintNum[i];
 			chSort[i][0] = pName[i].inSerial + '0';
 		}
-		ChOutput(chSort, 13, 0, 0, 0, 0);//确定出牌
+		ChOutput(chSort, 14, 0, 0, 0, 0, pGameSerial);//确定出牌
 }

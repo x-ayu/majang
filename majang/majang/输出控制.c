@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include"masd.h"
 
-int ChOutput(char Output[13][3],int intNumber, _Bool bWay, _Bool bMode, int intInitial, int intEnd)
+int ChOutput(char Output[14][3],int intNumber, _Bool bWay, _Bool bMode, int intInitial, int intEnd,char *pGameSerial)
 {
 	if (intNumber == 4)
 	{
@@ -42,7 +42,9 @@ int ChOutput(char Output[13][3],int intNumber, _Bool bWay, _Bool bMode, int intI
 			else if ((intInput == 75) && intOutput > 1) {
 				intOutput--;
 			}
-		//	system("cls");
+			system("cls");
+			if (pGameSerial != NULL)
+				printf("Íæ¼Ò%s³öÅÆ\n", pGameSerial);
 			for (int i = 0; i < intNumber; i++)
 			{
 				if (i == intOutput - 1)printf("%s    ", Output[i]);
