@@ -18,6 +18,7 @@ int main(void)
 	AloneRandom(136,as);
 	struct NAMES  WJ;
 	WJ = _Interface();
+	char pszSoupa1[13][2], pszSoupa2[13][2], pszSoupa3[13][2], pszSoupa4[13][2] ;
 	struct SOUP pName1[13];
 	struct SOUP pName2[13];
 	struct SOUP pName3[13];
@@ -26,4 +27,9 @@ int main(void)
 	FaPi(pName2,as); printf("\n");
 	FaPi(pName3,as); printf("\n");
 	FaPi(pName4,as); printf("\n");
+	pszSoupa1[13][2] = Sequence(pName1); printf("\n");
+	Sequence(pName2); printf("\n");
+	Sequence(pName3); printf("\n");
+	Sequence(pName4); printf("\n");
+	ChOutput(pszSoupa1, 13, 0, 0, 0, 0);
 }

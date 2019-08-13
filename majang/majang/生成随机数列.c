@@ -3,7 +3,7 @@
 #include<stdio.h>
 int* AloneRandom(int  number, int* Target)
 {
-	srand(clock());
+	srand(time(NULL));
 	int intNum1, intNum2=0,intNum3=0;
 	int * pNumb1;
 	pNumb1 = (int*)malloc(sizeof(int)*number);
