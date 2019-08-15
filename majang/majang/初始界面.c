@@ -82,6 +82,7 @@
 		printf("输入玩家2姓名："); scanf_s("%s", &name.szPlayersName2,24);
 		printf("输入玩家3姓名："); scanf_s("%s", &name.szPlayersName3,24);
 		printf("输入玩家4姓名："); scanf_s("%s", &name.szPlayersName4,24);	
+		system("cls");
 	}
 	if (intOutput == 2)   {
 		system("cls");

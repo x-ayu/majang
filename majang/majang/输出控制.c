@@ -5,7 +5,7 @@
 
 int ChOutput(char Output[14][3],int intNumber, int bWay, _Bool bMode, int intInitial, int intEnd,char *pGameSerial)
 {
-	if (intNumber == 4)
+	if (intNumber == 4&& pGameSerial==NULL)
 	{
 		Output[0][0] = '1', Output[0][1]='\0';
 		Output[1][0] = '2', Output[1][1] = '\0';

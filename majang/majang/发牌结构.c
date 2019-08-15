@@ -1,8 +1,14 @@
 #include"masd.h"
-
+#include<stdio.h>
+#include<stdlib.h>
 SOUP Distribute(int *Han)
 {
 	static int inX = 0;
+	if (inX > 135)//发完所有牌后再次发牌将会流局
+	{
+		puts("流局");
+		exit(1);
+	}
 	SOUP Sards = {0,0};
 	int inY = Han[inX] / 4;
 	if (inY == 0)
