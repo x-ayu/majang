@@ -33,6 +33,9 @@
     <ClCompile Include="排序.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="碰判定.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="masd.h">

@@ -1,9 +1,9 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include<stdlib.h>
 #include"masd.h"
 
-int ChOutput(char Output[14][3],int intNumber, _Bool bWay, _Bool bMode, int intInitial, int intEnd,char *pGameSerial)
+int ChOutput(char Output[14][3],int intNumber, int bWay, _Bool bMode, int intInitial, int intEnd,char *pGameSerial)
 {
 	if (intNumber == 4)
 	{
@@ -11,6 +11,7 @@ int ChOutput(char Output[14][3],int intNumber, _Bool bWay, _Bool bMode, int intI
 		Output[1][0] = '2', Output[1][1] = '\0';
 		Output[2][0] = '3', Output[2][1] = '\0';
 		Output[3][0] = '4', Output[3][1] = '\0';
+		intNumber = 4;
 	}
 	int intInput1, intInput = 0,  intOutput = 1;
 	if (bWay == 0)//œÚ…œ£ª
@@ -53,6 +54,7 @@ int ChOutput(char Output[14][3],int intNumber, _Bool bWay, _Bool bMode, int intI
 			printf("\n");
 			for (int i = 0; i < intNumber; i++)
 			{
+				if (i == intNumber)printf("   ");
 				if (i != intOutput - 1)printf("%s    ", Output[i]);
 				else printf("      ");
 			}printf("\n");
@@ -66,7 +68,8 @@ int ChOutput(char Output[14][3],int intNumber, _Bool bWay, _Bool bMode, int intI
 			else printf("%s    ", Output[i]);
 		}
 		printf("\n");
-		for (int i = 0; i <= intEnd; i++) {
+		for (int i = 0; i < 14; i++) {
+			if(i== intNumber)printf("   ");
 			if (i >= intInitial && i <= intEnd)printf("      ");
 			else printf("%s    ", Output[i]);
 		}

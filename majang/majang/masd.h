@@ -3,7 +3,7 @@
 #include<stdbool.h>
 
 //预处理
-#define CuPai(A,X,T,I) { A[13] = TEMPORARCARDS; printf("玩家"#X"：%s出牌：\n",T);intPlay = Sequence(A,T);I[intPlay - 1] = A[13];}
+#define CuPai(A,X,T,I) { A[13] = TEMPORARCARDS; printf("玩家"#X"：%s出牌：\n",T);intPlay = Sequence(A,T,1,intCardNum);I[intPlay - 1] = A[13];}
 
 
 //结构定义
@@ -23,6 +23,8 @@ typedef struct
 
  //函数声明
 NAMES	 _Interface(void);
-int ChOutput(char* [], int, bool, bool, int, int,char*);//最后一个量表示玩家名称
+int ChOutput(char* [], int, int, bool, int, int,char*);//最后一个量表示玩家名称
 int* AloneRandom(int, int*);
 SOUP Distribute(char* Han);
+int Touch(SOUP*, SOUP,int);
+int Sequence(SOUP*,char*,int , int);

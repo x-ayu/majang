@@ -12,7 +12,7 @@ int Compare(const void* p1, const void* p2)//用于qsort函数
 	else
 		return -1;
 }
-void Sequence( SOUP *pName,char* pGameSerial)
+int Sequence( SOUP *pName,char* pGameSerial,int NNN, int intCardNum)
 {
 	int (*ph)(const void* , const void* );
 	ph = Compare;
@@ -26,7 +26,7 @@ void Sequence( SOUP *pName,char* pGameSerial)
 		chSort[i][1] = pName[i].chSign;
 		chSort[i][2] = '\0';
 	}		//28~134先按w.t.l第一次分类，不排列数字顺序
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'W'&& chSort[i][0]!=0)
 			{
@@ -36,7 +36,7 @@ void Sequence( SOUP *pName,char* pGameSerial)
 				inTemporary++;
 			}
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'T')
 			{
@@ -45,9 +45,9 @@ void Sequence( SOUP *pName,char* pGameSerial)
 				pName[inTemporary].chSign = chSort[i][1];
 				inTemporary++; 
 			}
-			if (inTemporary == 13)break;
+			if (inTemporary == intCardNum)break;
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'L')
 			{
@@ -56,9 +56,9 @@ void Sequence( SOUP *pName,char* pGameSerial)
 				pName[inTemporary].chSign = chSort[i][1];
 				inTemporary++;
 			}
-			if (inTemporary == 13)break;
+			if (inTemporary == intCardNum)break;
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'E')
 			{
@@ -68,7 +68,7 @@ void Sequence( SOUP *pName,char* pGameSerial)
 			}
 			if (inTemporary == 13)break;
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'W'&& chSort[i][0] == 0)
 			{
@@ -76,9 +76,9 @@ void Sequence( SOUP *pName,char* pGameSerial)
 				pName[inTemporary].chSign = chSort[i][1];
 				inTemporary++;
 			}
-			if (inTemporary == 13)break;
+			if (inTemporary == intCardNum)break;
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'S')
 			{
@@ -86,9 +86,9 @@ void Sequence( SOUP *pName,char* pGameSerial)
 				pName[inTemporary].chSign = chSort[i][1];
 				inTemporary++;
 			}
-			if (inTemporary == 13)break;
+			if (inTemporary == intCardNum)break;
 		}
-		for (int i = 0; i < 12; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'N')
 			{
@@ -96,9 +96,9 @@ void Sequence( SOUP *pName,char* pGameSerial)
 				pName[inTemporary].chSign = chSort[i][1];
 				inTemporary++;
 			}
-			if (inTemporary == 13)break;
+			if (inTemporary == intCardNum)break;
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'Z')
 			{
@@ -106,9 +106,9 @@ void Sequence( SOUP *pName,char* pGameSerial)
 				pName[inTemporary].chSign = chSort[i][1];
 				inTemporary++;
 			}
-			if (inTemporary == 13)break;
+			if (inTemporary == intCardNum)break;
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'K')
 			{
@@ -116,9 +116,9 @@ void Sequence( SOUP *pName,char* pGameSerial)
 				pName[inTemporary].chSign = chSort[i][1];
 				inTemporary++;
 			}
-			if (inTemporary == 13)break;
+			if (inTemporary == intCardNum)break;
 		}
-		for (int i = 0; i < 13; i++)
+		for (int i = 0; i < intCardNum; i++)
 		{
 			if (chSort[i][1] == 'F')
 			{
@@ -126,7 +126,7 @@ void Sequence( SOUP *pName,char* pGameSerial)
 				pName[inTemporary].chSign = chSort[i][1];
 				inTemporary++;
 			}
-			if (inTemporary == 13)break;
+			if (inTemporary == intCardNum)break;
 		}
 		for (int i = 0; i < 14; i++)
 		{
@@ -140,10 +140,14 @@ void Sequence( SOUP *pName,char* pGameSerial)
 		qsort(szintNum, intWNum, sizeof(int), ph);
 		qsort(&szintNum[intWNum], intTNum, sizeof(int), ph);
 		qsort(&szintNum[intWNum+intTNum], intLNum, sizeof(int), ph);
-		for (int i = 0; i < 14; i++)
+		
+		{
+			for (int i = 0; i < 14; i++)
 		{
 			pName[i].inSerial = szintNum[i];
 			chSort[i][0] = pName[i].inSerial + '0';
 		}
-		ChOutput(chSort, 14, 0, 0, 0, 0, pGameSerial);//确定出牌
+		if (NNN != 0)
+			ChOutput(chSort, 14, 0, 0, 0, 0, pGameSerial);//确定出牌
+		}
 }

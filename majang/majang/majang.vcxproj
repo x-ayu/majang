@@ -155,6 +155,7 @@
     <ClCompile Include="发牌结构.c" />
     <ClCompile Include="排序.c" />
     <ClCompile Include="生成随机数列.c" />
+    <ClCompile Include="碰判定.c" />
     <ClCompile Include="起始函数.c" />
     <ClCompile Include="输出控制.c" />
   </ItemGroup>

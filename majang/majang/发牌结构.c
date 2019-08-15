@@ -1,9 +1,9 @@
 #include"masd.h"
-#include<stdio.h>
+
 SOUP Distribute(int *Han)
 {
 	static int inX = 0;
-	SOUP Sards;
+	SOUP Sards = {0,0};
 	int inY = Han[inX] / 4;
 	if (inY == 0)
 	{

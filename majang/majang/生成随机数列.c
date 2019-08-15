@@ -1,6 +1,5 @@
 #include<stdlib.h>
 #include<time.h>
-#include<stdio.h>
 int* AloneRandom(int  number, int* Target)
 {
 	srand(time(NULL));
