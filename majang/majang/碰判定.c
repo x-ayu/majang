@@ -42,7 +42,7 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 		{
 			intLS= 2;
 		}
-		if (intKZ == 1)
+		if (intKZ == 1)//接下来几段用于交换碰/杠牌的位置和减少手牌数目
 		{
 			LSCARD1.chSign = pCardGroup[*intCardNum - 2].chSign; LSCARD1.inSerial = pCardGroup[*intCardNum - 2].inSerial;
 			LSCARD2.chSign = pCardGroup[*intCardNum - 1].chSign; LSCARD2.inSerial = pCardGroup[*intCardNum - 1].inSerial;
