@@ -26,7 +26,7 @@ int main(void)
 	{
 		int intRecordPlayer = 0, intPlay, intCardNum1 = 13, intCardNum2 = 13, intCardNum3 = 13, intCardNum4 = 13;
 		int inCcontrolPlay = 1;
-		char szBarRecord[4][9];
+		char szBarRecord[4][9] = {{"1"},{"2"},{"3"},{"4"}};
 		SOUP TEMPORARCARDS;
 		for (;;)
 		{
@@ -34,11 +34,17 @@ int main(void)
 			TEMPORARCARDS = Distribute(as);
 			if (inCcontrolPlay == 1)//待修改
 			{
-				OWTouch(pName1, TEMPORARCARDS);
-				if (Touch(pName1, &TEMPORARCARDS, &intCardNum1, 1) == 1)
+				if (Touch(pName1, &TEMPORARCARDS, &intCardNum1, 1) == 2)
 				{
-				TEMPORARCARDS = Distribute(as);
+					GangRecord(szBarRecord[0], TEMPORARCARDS);
+					TEMPORARCARDS = Distribute(as);
                 }
+				if (OWTouch(pName1, TEMPORARCARDS) == 1)
+				{
+					GangRecord(szBarRecord[0], TEMPORARCARDS);
+					TEMPORARCARDS = Distribute(as);
+				}
+				printf("玩家%s杠的牌：%s\n", WJ.szPlayersName1,szBarRecord[0]);
 				CuPai(pName1,1, intCardNum1, WJ.szPlayersName1, pName1);
 				PlayersPengDetermine2
 				PlayersPengDetermine3
@@ -78,11 +84,17 @@ int main(void)
 			}
 			if (inCcontrolPlay == 2)
 			{
-				OWTouch(pName2, TEMPORARCARDS);
-				if (Touch(pName2, &TEMPORARCARDS, &intCardNum2, 1) == 1)
+				if (Touch(pName2, &TEMPORARCARDS, &intCardNum2, 1) == 2)
 				{
+					GangRecord(szBarRecord[1], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
 				}
+				if (OWTouch(pName2, TEMPORARCARDS) == 1)
+				{
+					GangRecord(szBarRecord[1], TEMPORARCARDS);
+					TEMPORARCARDS = Distribute(as);
+				}
+				printf("玩家%s杠的牌：%s\n",WJ.szPlayersName2 ,szBarRecord[1]);
 				CuPai(pName2,2, intCardNum2 , WJ.szPlayersName2, pName2);
 				PlayersPengDetermine1
 				PlayersPengDetermine3
@@ -90,11 +102,17 @@ int main(void)
 			}
 			if (inCcontrolPlay == 3)
 			{
-				OWTouch(pName3, TEMPORARCARDS);
-				if (Touch(pName3, &TEMPORARCARDS, &intCardNum3, 1) == 1)
+				if (Touch(pName3, &TEMPORARCARDS, &intCardNum3, 1) == 2)
 				{
+					GangRecord(szBarRecord[2], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
 				}
+				if (OWTouch(pName3, TEMPORARCARDS) == 1)
+				{
+					GangRecord(szBarRecord[2], TEMPORARCARDS);
+					TEMPORARCARDS = Distribute(as);
+				}
+				printf("玩家%s杠的牌：%s\n",WJ.szPlayersName3,szBarRecord[2]);
 				CuPai(pName3,3, intCardNum3, WJ.szPlayersName3, pName3);
 				PlayersPengDetermine4
 				PlayersPengDetermine1
@@ -102,11 +120,17 @@ int main(void)
 			}
 			if (inCcontrolPlay == 4)
 			{
-				if (Touch(pName4, &TEMPORARCARDS, &intCardNum4, 1) == 1)
+				if (Touch(pName4, &TEMPORARCARDS, &intCardNum4, 1) == 2)
 				{
+					GangRecord(szBarRecord[3], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
 				}
-				OWTouch(pName4, TEMPORARCARDS);
+				if (OWTouch(pName4, TEMPORARCARDS) == 1)
+				{
+					GangRecord(szBarRecord[3], TEMPORARCARDS);
+					TEMPORARCARDS = Distribute(as);
+				}
+				printf("玩家%s杠的牌：%s\n",WJ.szPlayersName4,szBarRecord[3]);
 				CuPai(pName4,4, intCardNum4,  WJ.szPlayersName4, pName4);
 				PlayersPengDetermine1
 				PlayersPengDetermine2

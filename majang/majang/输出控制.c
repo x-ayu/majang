@@ -16,13 +16,14 @@ int ChOutput(char Output[14][3],int intNumber, int bWay, _Bool bMode, int intIni
 	int intInput1, intInput = 0,  intOutput = 1;
 	if (bWay == 0)//向上；
 	{
-		for (int i = 0; i < intNumber; i++)
+		for (int i = 0; i < 14; i++)
 		{
 			if(i==0) printf("%s    \n", Output[i]);
 		}
-		for (int i = 0; i < intNumber; i++)
+		for (int i = 0; i < 14; i++)
 		{
 			if (i == 0) printf("      ");
+			if (i == intNumber)printf("   ");
 			if (i != 0) printf("%s    ", Output[i]);
 		}
 		printf("\n");
@@ -46,13 +47,13 @@ int ChOutput(char Output[14][3],int intNumber, int bWay, _Bool bMode, int intIni
 			system("cls");
 			if (pGameSerial != NULL)
 				printf("玩家%s出牌\n", pGameSerial);
-			for (int i = 0; i < intNumber; i++)
+			for (int i = 0; i <14; i++)
 			{
 				if (i == intOutput - 1)printf("%s    ", Output[i]);
 				else printf("      ");
 			}
 			printf("\n");
-			for (int i = 0; i < intNumber; i++)
+			for (int i = 0; i < 14; i++)
 			{
 				if (i == intNumber)printf("   ");
 				if (i != intOutput - 1)printf("%s    ", Output[i]);

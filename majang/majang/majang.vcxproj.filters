@@ -36,6 +36,9 @@
     <ClCompile Include="碰判定.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="杠牌记录.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="masd.h">

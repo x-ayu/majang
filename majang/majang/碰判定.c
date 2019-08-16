@@ -32,7 +32,7 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 	{
 		SOUP LSCARD1, LSCARD2, LSCARD3;
 		printf("玩家可以杠/碰牌，是否杠牌（1确认碰，0取消碰）\n");
-		ChOutput(chSort, *intCardNum, 2, 1, intLS1 - 1, intLS1+1, NULL);
+		ChOutput(chSort, *intCardNum, 2, 1, intLS1 - 1, intLS1+1,"");
 		for (;;)
 		{
 			intKZ = getchar() - '0';
@@ -64,7 +64,7 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 		{
 			SOUP LSCARD1,LSCARD2, LSCARD3;
 			printf("玩家可以碰牌，是否碰牌（1确认碰，0取消碰）\n");
-			ChOutput(chSort, *intCardNum,2,1, intLS1-1, intLS1,NULL);
+			ChOutput(chSort, *intCardNum,2,1, intLS1-1, intLS1,"");
 			for (;;)
 			{
 				intKZ = getchar() - '0';
@@ -125,8 +125,8 @@ int OWTouch(SOUP* pCardGroup, SOUP TEmporary)//加杠
 	}
 	if (intLS == 3)
 	{
-		printf("玩家可以加杠牌，是否杠牌（1确认碰，0取消碰）\n");
-		ChOutput(chSort, 14, 2, 1, intLS1 - 1, intLS1 + 1, NULL);
+		printf("玩家可以杠牌，是否杠牌（1确认，0取消）\n");
+		ChOutput(chSort, 14, 2, 1, intLS1 - 1, intLS1 + 1,"");
 		for (;;)
 		{
 			intKZ = getchar() - '0';
