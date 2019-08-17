@@ -1,5 +1,4 @@
 #include<stdlib.h>
-#include<stdio.h>
 #include"masd.h"
 int Compare(const void* p1, const void* p2)//ÓÃÓÚqsortº¯Êı
 {

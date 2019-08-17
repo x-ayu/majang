@@ -48,7 +48,9 @@ int main(void)
 				PrintfCard2
 				PrintfCard3
 				PrintfCard4
+				Sequence(pName1, NULL, 0, intCardNum1);
 				printf("玩家%s杠的牌：%s\n", WJ.szPlayersName1, szBarRecord[0]);
+				HUDetermine(pName1, intCardNum1, TEMPORARCARDS);
 				CuPai(pName1,1, intCardNum1, WJ.szPlayersName1, pName1); 
 				PlayersPengDetermine2
 				PlayersPengDetermine3
@@ -102,6 +104,8 @@ int main(void)
 				PrintfCard3
 				PrintfCard4
 				printf("玩家%s杠的牌：%s\n",WJ.szPlayersName2 ,szBarRecord[1]);
+				Sequence(pName2, NULL, 0, intCardNum2);
+				HUDetermine(pName2, intCardNum2, TEMPORARCARDS);
 				CuPai(pName2,2, intCardNum2 , WJ.szPlayersName2, pName2);
 				PlayersPengDetermine1
 				PlayersPengDetermine3
@@ -124,6 +128,8 @@ int main(void)
 				PrintfCard2
 				PrintfCard4
 				printf("玩家%s杠的牌：%s\n",WJ.szPlayersName3,szBarRecord[2]);
+				Sequence(pName3, NULL, 0, intCardNum3);
+				HUDetermine(pName3, intCardNum3, TEMPORARCARDS);
 				CuPai(pName3,3, intCardNum3, WJ.szPlayersName3, pName3);
 				PlayersPengDetermine4
 				PlayersPengDetermine1
@@ -146,6 +152,8 @@ int main(void)
 				PrintfCard2
 				PrintfCard3
 				printf("玩家%s杠的牌：%s\n",WJ.szPlayersName4,szBarRecord[3]);
+				Sequence(pName4, NULL, 0, intCardNum4);
+				HUDetermine(pName4, intCardNum4, TEMPORARCARDS);
 				CuPai(pName4,4, intCardNum4,  WJ.szPlayersName4, pName4);
 				PlayersPengDetermine1
 				PlayersPengDetermine2

@@ -3,7 +3,7 @@
 int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 {
 	Sequence(pCardGroup,NULL,0, *intCardNum);
-	int intLS=0,intLS1,intLS2, intKZ;	
+	int intLS=0,intLS1,intLS2, intKZ=-1;	
 	int n = 1;//用于确定碰/杠位置
 	char chSort[14][3];
 	for (int i = 0; i < 13; i++)
@@ -56,6 +56,7 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 			pCardGroup[intLS1 - 1].chSign = LSCARD2.chSign; pCardGroup[intLS1 - 1].inSerial = LSCARD1.inSerial;
 			pCardGroup[intLS1 +1].chSign = LSCARD3.chSign; pCardGroup[intLS1 +1].inSerial = LSCARD3.inSerial;
 			*intCardNum -= 3;
+			Sequence(pCardGroup, NULL, 0, *intCardNum);
 			return 2;
 		}
 
@@ -93,6 +94,7 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 				pCardGroup[intLS2 - 1].chSign = pCardGroup[*intCardNum -1].chSign; pCardGroup[intLS2 - 1].inSerial = pCardGroup[*intCardNum -1].inSerial;
 				pCardGroup[*intCardNum - 1].chSign = pCardGroup[*intCardNum ].chSign; pCardGroup[*intCardNum - 1].inSerial = pCardGroup[*intCardNum ].inSerial;
 				(*intCardNum )--;
+				Sequence(pCardGroup, NULL, 0, *intCardNum);
 			}
 			return 1;
 		}
