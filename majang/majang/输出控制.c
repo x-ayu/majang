@@ -37,6 +37,10 @@ int ChOutput(char Output[14][3],int intNumber, int bWay, _Bool bMode, int intIni
 				if (intInput1 == 224) { if ((intInput == 75) || (intInput == 77))break; }
 			}
 			if (intInput1 == 13)break;
+			if ((intInput == 77) && intOutput == intNumber)
+				intOutput = 14;
+			if ((intInput == 75) && intOutput == 14)
+				intOutput = intNumber+1;
 			if ((intInput == 77) && intOutput < intNumber)
 			{
 				intOutput++;

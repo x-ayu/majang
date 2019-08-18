@@ -100,9 +100,13 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 		}
 		return 0;
 }
+
+
+
+
 int OWTouch(SOUP* pCardGroup, SOUP TEmporary ,int *intCardNum)//加杠
 {
-	int intLS =0, intLS1, intKZ;
+	int intLS =0, intLS1, intKZ=2;
 	int n = 1;//用于确定碰/杠位置
 	char chSort[14][3];
 	for (int i = 0; i < 13; i++)
@@ -127,9 +131,10 @@ int OWTouch(SOUP* pCardGroup, SOUP TEmporary ,int *intCardNum)//加杠
 	}
 	for (int i = 0; i < 13; i++)
 	{
-		if (pCardGroup[i].chSign == pCardGroup[i + 1].chSign == pCardGroup[i + 3].chSign == pCardGroup[i + 2].chSign && pCardGroup[i].inSerial == pCardGroup[i + 1].inSerial == pCardGroup[i + 2].inSerial == pCardGroup[i + 3].inSerial)
+		if (pCardGroup[i].chSign == pCardGroup[i + 1].chSign == pCardGroup[i + 3].chSign == pCardGroup[i + 2].chSign && \
+			pCardGroup[i].inSerial == pCardGroup[i + 1].inSerial == pCardGroup[i + 2].inSerial == pCardGroup[i + 3].inSerial)
 		{
-			printf("玩家可以自杠牌，是否杠牌（1确认，0取消）\n");
+			printf("玩家可以自杠牌，是否杠牌（1确认，0取消）\n");//未实现
 			ChOutput(chSort, 14, 2, 1, intLS1 - 1, intLS1 + 1, "");
 			for (;;)
 			{

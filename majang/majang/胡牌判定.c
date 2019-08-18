@@ -3,15 +3,16 @@
 #include<stdio.h>
 
 #define SURENU(X) if (X % 3 == 0)X = 0;else if (X % 3 == 2)X = 1;else X = 2;
-
+#define QUHU {printf("玩家可以和牌,是否和牌？（摁Enter确定并结束游戏，其他键取消）");getchar();for (int i = 0; i < intCardNum; i++)printf("%d%c ", pName[i].inSerial, pName[i].chSign);\
+printf("%d%c\n", TEMPORARCARDS.inSerial, TEMPORARCARDS.chSign);if (getchar() == 10)exit(1);}
 int HuPai(char *, int );
 
 void HUDetermine(SOUP* pName, int intCardNum, SOUP TEMPORARCARDS)
 {
 	char chaLSName[14];
 	SOUP pName0[14];
-	int intWNum=0, intTNum=0, intLNum=0, intENum=0, intWENum=0, intSNum=0, intNNum=0, intZNum=0, intKNum=0, intFNum=0;
-	int intWNum0 = 0, intTNum0 = 0;
+	int intWNum=0, intTNum=0, intLNum=0, intENum=0, intWENum=0, intSNum=0, intNNum=0, intZNum=0, intKNum=0, intFNum=0;//记录每种牌的出现次数，并作为判定胡牌的数据
+	int intWNum0 = 0, intTNum0 = 0;//
 	for (int i = 0; i < intCardNum; i++)
 		{
 			pName0[i] = pName[i];
@@ -73,31 +74,47 @@ void HUDetermine(SOUP* pName, int intCardNum, SOUP TEMPORARCARDS)
 	intWNum0 = HuPai(chaLSName, intWNum); 
 	intTNum0 = HuPai(&chaLSName[intWNum], intTNum); 
 	intLNum = HuPai(&chaLSName[intWNum+intTNum], intLNum);
-	
-	/*if (intWENum % 3 == 0)intWENum = 0;
-	else if (intWENum % 3 == 2)intWENum == 1;
-	else intWENum == 2;*/
-	SURENU(intWENum)
-	SURENU(intENum)
-	SURENU(intNNum)
-	SURENU(intSNum)
-	SURENU(intZNum)
-	SURENU(intKNum)
-	SURENU(intFNum)
-		if (intWNum0 + intTNum0 + intLNum + intENum + intWENum + intSNum + intNNum + intZNum + intKNum + intFNum == 1)
+		if (intCardNum == 14)//判定七对子
 		{
-			printf("玩家可以和牌,是否和牌？（摁Enter确定并结束游戏，其他键取消）");
-			getchar();
-			for (int i = 0; i < intCardNum; i++)
-				printf("%d%c ", pName[i].inSerial, pName[i].chSign);
-			printf("%d%c\n", TEMPORARCARDS.inSerial, TEMPORARCARDS.chSign);
-			if (getchar() == 10)
-				exit(1);
+			if (pName0[0].chSign == pName0[1].chSign && pName0[2].chSign == pName0[3].chSign && pName0[4].chSign == pName0[5].chSign && pName0[6].chSign == pName0[7].chSign && \
+				pName0[8].chSign == pName0[9].chSign && pName0[10].chSign == pName0[11].chSign && pName0[12].chSign == pName0[13].chSign)
+			{
+				if(pName0[0].inSerial== pName0[1].inSerial&& pName0[2].inSerial== pName0[3].inSerial&& pName0[4].inSerial== pName0[5].inSerial&& pName0[6].inSerial== pName0[7].inSerial
+					&& pName0[8].inSerial== pName0[9].inSerial&& pName0[10].inSerial== pName0[11].inSerial&& pName0[12].inSerial== pName0[13].inSerial)
+					QUHU
+			}
 		}
+		if (intCardNum == 14)//判定国士无双
+		{
+			if ((intFNum == 1 || intFNum == 2) && (intKNum == 0 || intKNum == 2) && (intKNum == 1 || intKNum == 2) && (intZNum == 1 || intZNum == 2) && (intNNum == 1 || intNNum == 2)\
+				&& (intSNum == 1 || intSNum == 2) && (intENum == 1 || intENum == 2) && (intWENum == 1 || intWENum == 2))
+			{
+				if (intFNum + intZNum + intKNum + intNNum + intSNum + intENum + intWENum == 7)
+				{
+					if (pName0[0].inSerial == 1 && pName0[intWNum-1].inSerial == 9 && pName0[intWNum].inSerial == 1 && pName0[intWNum+ intTNum-1].inSerial == 9 && \
+						pName0[intWNum + intTNum+ intLNum-1].inSerial == 1 && pName0[5].inSerial == 9)
+						QUHU
+				}
+				else  if (intFNum + intZNum + intKNum + intNNum + intSNum + intENum + intWENum == 8)
+				{
+					if(pName0[0].inSerial==1&& pName0[1].inSerial == 9&& pName0[2].inSerial == 1&& pName0[3].inSerial == 9&& pName0[4].inSerial == 1&& pName0[5].inSerial == 9)
+						QUHU
+				}
+			}
+		}
+
+		SURENU(intWENum)
+		SURENU(intENum)
+		SURENU(intNNum)
+		SURENU(intSNum)
+		SURENU(intZNum)
+		SURENU(intKNum)
+		SURENU(intFNum)
+		if (intWNum0 + intTNum0 + intLNum + intENum + intWENum + intSNum + intNNum + intZNum + intKNum + intFNum == 1)
+			QUHU
 }
 
-
-int HuPai(char *chaLSName, int intTem1)
+int HuPai(char *chaLSName, int intTem1)//最终剩余2张相同牌时返回1，没有剩余牌时返回0，其余结果返回2
 {
 	int intTem12=1;
 	int  intnum[10] = {0,0};
