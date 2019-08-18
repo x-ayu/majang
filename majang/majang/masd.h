@@ -35,6 +35,6 @@ int* AloneRandom(int, int*);
 SOUP Distribute(char* Han);
 int Touch(SOUP*, SOUP*,int*,int);
 int Sequence(SOUP*,char*,int , int);
-int OWTouch(SOUP* pCardGroup, SOUP TEmporary);
+int OWTouch(SOUP* pCardGroup, SOUP TEmporary,int* intCardNum);
 void GangRecord(char*, SOUP);
 void HUDetermine(SOUP*,int ,SOUP);

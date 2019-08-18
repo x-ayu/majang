@@ -40,7 +40,7 @@ int main(void)
 					GangRecord(szBarRecord[0], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
                 }
-				if (OWTouch(pName1, TEMPORARCARDS) == 1)
+				if (OWTouch(pName1, TEMPORARCARDS, &intCardNum1) == 1)
 				{
 					GangRecord(szBarRecord[0], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
@@ -95,7 +95,7 @@ int main(void)
 					GangRecord(szBarRecord[1], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
 				}
-				if (OWTouch(pName2, TEMPORARCARDS) == 1)
+				if (OWTouch(pName2, TEMPORARCARDS, &intCardNum2) == 1)
 				{
 					GangRecord(szBarRecord[1], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
@@ -119,7 +119,7 @@ int main(void)
 					GangRecord(szBarRecord[2], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
 				}
-				if (OWTouch(pName3, TEMPORARCARDS) == 1)
+				if (OWTouch(pName3, TEMPORARCARDS, &intCardNum3) == 1)
 				{
 					GangRecord(szBarRecord[2], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
@@ -143,7 +143,7 @@ int main(void)
 					GangRecord(szBarRecord[3], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
 				}
-				if (OWTouch(pName4, TEMPORARCARDS) == 1)
+				if (OWTouch(pName4, TEMPORARCARDS, &intCardNum4) == 1)
 				{
 					GangRecord(szBarRecord[3], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
