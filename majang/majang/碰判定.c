@@ -1,6 +1,6 @@
 #include"masd.h"
 #include<stdio.h>
-int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
+int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum)
 {
 	Sequence(pCardGroup,NULL,0, *intCardNum);
 	int intLS=0,intLS1,intLS2, intKZ=-1;	
@@ -28,7 +28,7 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 		}
 
 	}
-	if (intLS == 3&& intZG !=1)
+	if (intLS == 3)
 	{
 		SOUP LSCARD1, LSCARD2, LSCARD3;
 		printf("玩家可以杠/碰牌，是否杠牌（1确认碰，0取消碰）\n");
@@ -61,9 +61,9 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 		}
 
 	}
-		if (intLS == 2&&intZG != 1)
+		if (intLS == 2)
 		{
-			SOUP LSCARD1,LSCARD2, LSCARD3;
+			SOUP LSCARD1,LSCARD2;
 			printf("玩家可以碰牌，是否碰牌（1确认碰，0取消碰）\n");
 			ChOutput(chSort, *intCardNum,2,1, intLS1-1, intLS1,"");
 			for (;;)
@@ -82,6 +82,7 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 				pCardGroup[intLS1].chSign = LSCARD1.chSign; pCardGroup[intLS1].inSerial = LSCARD2.inSerial;
 				pCardGroup[intLS1 - 1].chSign = LSCARD2.chSign; pCardGroup[intLS1 - 1].inSerial = LSCARD1.inSerial;
 				*intCardNum -= 2;
+				Sequence(pCardGroup, NULL, 0, *intCardNum);
 				for (int i = 0; i < 13; i++)
 				{
 					chSort[i][0] = pCardGroup[i].inSerial + '0';
@@ -89,12 +90,13 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum,int intZG)
 					chSort[i][2] = '\0';
 				}
 				chSort[13][0] = TEmporary->inSerial + '0'; chSort[13][1] = TEmporary->chSign; chSort[13][2] = '\0';
-				intLS2 = ChOutput(chSort, *intCardNum, 0, 0, 0, 0, "");
+				intLS2 = ChOutput(chSort, *intCardNum, 0, 2, 0, 0, "");
 				TEmporary->chSign = pCardGroup[intLS2 - 1].chSign; TEmporary->inSerial = pCardGroup[intLS2 - 1].inSerial;
 				pCardGroup[intLS2 - 1].chSign = pCardGroup[*intCardNum -1].chSign; pCardGroup[intLS2 - 1].inSerial = pCardGroup[*intCardNum -1].inSerial;
 				pCardGroup[*intCardNum - 1].chSign = pCardGroup[*intCardNum ].chSign; pCardGroup[*intCardNum - 1].inSerial = pCardGroup[*intCardNum ].inSerial;
 				(*intCardNum )--;
 				Sequence(pCardGroup, NULL, 0, *intCardNum);
+				system("cls");
 			}
 			return 1;
 		}
@@ -115,7 +117,31 @@ int OWTouch(SOUP* pCardGroup, SOUP TEmporary ,int *intCardNum)//加杠
 		chSort[i][1] = pCardGroup[i].chSign;
 		chSort[i][2] = '\0';
 	}
-	chSort[13][0] = TEmporary.inSerial + '0'; chSort[13][1] = TEmporary.chSign; chSort[13][2] = '\0';
+	chSort[13][0] = TEmporary.inSerial + '0'; chSort[13][1] = TEmporary.chSign; chSort[13][2] = '\0';/////////////////////////
+	for (int i = 0; i < *intCardNum - 3; i++)
+	{
+		if (pCardGroup[i].chSign == pCardGroup[i + 1].chSign && pCardGroup[i].chSign == pCardGroup[i + 2].chSign && pCardGroup[i].chSign == pCardGroup[i + 3].chSign && \
+			pCardGroup[i].inSerial == pCardGroup[i + 1].inSerial && pCardGroup[i].inSerial == pCardGroup[i + 3].inSerial && pCardGroup[i].inSerial == pCardGroup[i + 2].inSerial)
+		{
+			printf("玩家可以自杠牌，是否杠牌（1确认，0取消）\n");
+			ChOutput(chSort, 14, i, 1, i, i + 3, "");
+			for (;;)
+			{
+				intKZ = getchar() - '0';
+				if (intKZ == 1 || intKZ == 0)break;
+			}
+			if (intKZ == 1)
+			{
+				pCardGroup[i + 3].inSerial = pCardGroup[*intCardNum - 3].inSerial; pCardGroup[i + 3].chSign = pCardGroup[*intCardNum - 3].chSign;
+				pCardGroup[i + 2].inSerial = pCardGroup[*intCardNum - 1].inSerial; pCardGroup[i + 2].chSign = pCardGroup[*intCardNum - 1].chSign;
+				pCardGroup[i + 1].inSerial = pCardGroup[*intCardNum - 2].inSerial; pCardGroup[i + 1].chSign = pCardGroup[*intCardNum - 2].chSign;
+				pCardGroup[*intCardNum - 1].inSerial = pCardGroup[i].inSerial; pCardGroup[*intCardNum - 1].chSign = pCardGroup[i].chSign;
+				pCardGroup[*intCardNum - 2].inSerial = pCardGroup[i].inSerial; pCardGroup[*intCardNum - 2].chSign = pCardGroup[i].chSign;
+				pCardGroup[*intCardNum - 3].inSerial = pCardGroup[i].inSerial; pCardGroup[*intCardNum - 3].chSign = pCardGroup[i].chSign;
+				pCardGroup[i].inSerial = TEmporary.inSerial; pCardGroup[i].chSign = TEmporary.chSign; break;
+			}
+		}
+	}
 	for (int i = 0; i < 13; i++)
 	{
 		if (pCardGroup[i].chSign == TEmporary.chSign && pCardGroup[i].inSerial == TEmporary.inSerial)
@@ -129,20 +155,7 @@ int OWTouch(SOUP* pCardGroup, SOUP TEmporary ,int *intCardNum)//加杠
 			}
 		}
 	}
-	for (int i = 0; i < 13; i++)
-	{
-		if (pCardGroup[i].chSign == pCardGroup[i + 1].chSign == pCardGroup[i + 3].chSign == pCardGroup[i + 2].chSign && \
-			pCardGroup[i].inSerial == pCardGroup[i + 1].inSerial == pCardGroup[i + 2].inSerial == pCardGroup[i + 3].inSerial)
-		{
-			printf("玩家可以自杠牌，是否杠牌（1确认，0取消）\n");//未实现
-			ChOutput(chSort, 14, 2, 1, intLS1 - 1, intLS1 + 1, "");
-			for (;;)
-			{
-				intKZ = getchar() - '0';
-				if (intKZ == 1 || intKZ == 0)break;
-			}
-		}
-	}
+	
 	if (intLS == 3)
 	{
 		printf("玩家可以加杠牌，是否杠牌（1确认，0取消）\n");

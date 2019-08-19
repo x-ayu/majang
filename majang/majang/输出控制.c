@@ -37,9 +37,9 @@ int ChOutput(char Output[14][3],int intNumber, int bWay, _Bool bMode, int intIni
 				if (intInput1 == 224) { if ((intInput == 75) || (intInput == 77))break; }
 			}
 			if (intInput1 == 13)break;
-			if ((intInput == 77) && intOutput == intNumber)
+			if ((intInput == 77) && intOutput == intNumber&&bMode!=2)
 				intOutput = 14;
-			if ((intInput == 75) && intOutput == 14)
+			if ((intInput == 75) && intOutput == 14 && bMode != 2)
 				intOutput = intNumber+1;
 			if ((intInput == 77) && intOutput < intNumber)
 			{
@@ -53,6 +53,7 @@ int ChOutput(char Output[14][3],int intNumber, int bWay, _Bool bMode, int intIni
 				printf("Íæ¼Ò%s³öÅÆ\n", pGameSerial);
 			for (int i = 0; i <14; i++)
 			{
+				if (i == 13)printf("   ");
 				if (i == intOutput - 1)printf("%s    ", Output[i]);
 				else printf("      ");
 			}

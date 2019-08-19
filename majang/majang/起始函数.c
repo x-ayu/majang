@@ -26,14 +26,14 @@ int main(void)
 	{
 		int intRecordPlayer = 0, intPlay, intCardNum1 = 13, intCardNum2 = 13, intCardNum3 = 13, intCardNum4 = 13;
 		int inCcontrolPlay = 1;
-		char szBarRecord[4][9] = {{" "},{" "},{" "},{" "}};
+		char szBarRecord[4][9] = {" "," "," "," "};
 		SOUP TEMPORARCARDS;
 		for (;;)
 		{
 			
 			int intTouchReturnValue;
 			TEMPORARCARDS = Distribute(as);
-			if (inCcontrolPlay == 1)//´ýÐÞ¸Ä
+			if (inCcontrolPlay == 1)
 			{
 				if (Touch(pName1, &TEMPORARCARDS, &intCardNum1, 1) == 2)
 				{
@@ -55,38 +55,6 @@ int main(void)
 				PlayersPengDetermine2
 				PlayersPengDetermine3
 				PlayersPengDetermine4
-					
-				/*if (Touch(pName2, &TEMPORARCARDS, &intCardNum2) >0)
-				{
-					if (Touch(pName2, &TEMPORARCARDS, &intCardNum2) == 2)
-					{
-						inCcontrolPlay = 2;
-						continue;
-					}
-					else 
-					{ inCcontrolPlay = 3; continue;}
-				}
-				//
-				if (Touch(pName3, &TEMPORARCARDS, &intCardNum3) > 0)
-				{
-					if (Touch(pName3, &TEMPORARCARDS, &intCardNum3) == 2)
-					{
-						inCcontrolPlay = 3;
-						continue;
-					}
-					else{ inCcontrolPlay = 4; continue; }
-				}
-				//
-				if (Touch(pName4, &TEMPORARCARDS, &intCardNum4) > 0)
-				{
-					if (Touch(pName4, &TEMPORARCARDS, &intCardNum4) == 2)
-					{
-						inCcontrolPlay = 4;
-						continue;
-					}
-					else { inCcontrolPlay = 1; continue; }
-				}*/
-
 			}
 			if (inCcontrolPlay == 2)
 			{

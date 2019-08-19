@@ -12,7 +12,7 @@ void HUDetermine(SOUP* pName, int intCardNum, SOUP TEMPORARCARDS)
 	char chaLSName[14];
 	SOUP pName0[14];
 	int intWNum=0, intTNum=0, intLNum=0, intENum=0, intWENum=0, intSNum=0, intNNum=0, intZNum=0, intKNum=0, intFNum=0;//¼ÇÂ¼Ã¿ÖÖÅÆµÄ³öÏÖ´ÎÊı£¬²¢×÷ÎªÅĞ¶¨ºúÅÆµÄÊı¾İ
-	int intWNum0 = 0, intTNum0 = 0;//
+	int intWNum0 = 0, intTNum0 = 0;
 	for (int i = 0; i < intCardNum; i++)
 		{
 			pName0[i] = pName[i];
@@ -119,9 +119,6 @@ int HuPai(char *chaLSName, int intTem1)//×îÖÕÊ£Óà2ÕÅÏàÍ¬ÅÆÊ±·µ»Ø1£¬Ã»ÓĞÊ£ÓàÅÆÊ±·
 	int intTem12=1;
 	int  intnum[10] = {0,0};
 	int intTem1MIN=0, intTem1MAX=3;
-	
-		printf("%dv  ", chaLSName[0]);
-
 	for (int i = 0; i < intTem1; i++)
 	{
 		intnum[chaLSName[i]]++;
