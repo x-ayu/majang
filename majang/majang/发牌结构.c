@@ -9,6 +9,8 @@ SOUP Distribute(int *Han)
 		puts("Á÷¾Ö");
 		exit(1);
 	}
+	if(135 - inX<84)
+		printf("Ê£ÓàÅÆÊý%d\n",135-inX);
 	SOUP Sards = {0,0};
 	int inY = Han[inX] / 4;
 	if (inY == 0)

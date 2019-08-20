@@ -3,7 +3,7 @@
 #include<stdio.h>
 
 #define SURENU(X) if (X % 3 == 0)X = 0;else if (X % 3 == 2)X = 1;else X = 2;
-#define QUHU {printf("Íæ¼Ò¿ÉÒÔºÍÅÆ,ÊÇ·ñºÍÅÆ£¿£¨ŞôEnterÈ·¶¨²¢½áÊøÓÎÏ·£¬ÆäËû¼üÈ¡Ïû£©");getchar();for (int i = 0; i < intCardNum; i++)printf("%d%c ", pName[i].inSerial, pName[i].chSign);\
+#define QUHU {printf("Íæ¼Ò¿ÉÒÔºÍÅÆ,ÊÇ·ñºÍÅÆ£¿£¨ŞôEnterÈ·¶¨²¢½áÊøÓÎÏ·£¬ÆäËû¼üÈ¡Ïû£©\n");getchar();for (int i = 0; i < 13; i++)printf("%d%c ", pName0[i].inSerial, pName[i].chSign);\
 printf("%d%c\n", TEMPORARCARDS.inSerial, TEMPORARCARDS.chSign);if (getchar() == 10)exit(1);}
 int HuPai(char *, int );
 
@@ -66,11 +66,6 @@ void HUDetermine(SOUP* pName, int intCardNum, SOUP TEMPORARCARDS)
 			 intFNum++;
 		 }
 	}
-
-	for (int i = 0; i < 14; i++)
-	{
-		//printf("%d %d ", i,chaLSName[i]);
-	}
 	intWNum0 = HuPai(chaLSName, intWNum); 
 	intTNum0 = HuPai(&chaLSName[intWNum], intTNum); 
 	intLNum = HuPai(&chaLSName[intWNum+intTNum], intLNum);
@@ -124,7 +119,7 @@ int HuPai(char *chaLSName, int intTem1)//×îÖÕÊ£Óà2ÕÅÏàÍ¬ÅÆÊ±·µ»Ø1£¬Ã»ÓĞÊ£ÓàÅÆÊ±·
 		intnum[chaLSName[i]]++;
 	}
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 1; i < 10; i++)
 	{
 		if (intnum[i] == 0&& intnum[i+1]!=0)
 		{
@@ -132,7 +127,7 @@ int HuPai(char *chaLSName, int intTem1)//×îÖÕÊ£Óà2ÕÅÏàÍ¬ÅÆÊ±·µ»Ø1£¬Ã»ÓĞÊ£ÓàÅÆÊ±·
 			break;
 		}
 	}
-	for (int i = 8; i >0; i--)
+	for (int i = 9; i >0; i--)
 	{
 		if (intnum[i] == 0 && intnum[i -1] != 0)
 		{
@@ -150,13 +145,13 @@ int HuPai(char *chaLSName, int intTem1)//×îÖÕÊ£Óà2ÕÅÏàÍ¬ÅÆÊ±·µ»Ø1£¬Ã»ÓĞÊ£ÓàÅÆÊ±·
 			if(i== intTem1MIN||i== intTem1MIN+1||i== intTem1MAX||i== intTem1MAX-1)
 			{
 				if (intnum[intTem1MIN] == 1)///////
-			{
+					{
 				intnum[intTem1MIN] -= 1, intnum[intTem1MIN + 1] -= 1, intnum[intTem1MIN + 2] -= 1, intTem12 = 1;
-			}
+					}
 			else if (intnum[intTem1MAX] == 1)///////
-			{
-				intnum[intTem1MAX - 1] -= 1, intnum[intTem1MAX] -= 1, intnum[intTem1MAX - 2] -= 1, intTem12 = 1;
-			}
+				{
+					intnum[intTem1MAX - 1] -= 1, intnum[intTem1MAX] -= 1, intnum[intTem1MAX - 2] -= 1, intTem12 = 1;
+				}
 			else if (intnum[intTem1MIN + 1] == 1)//////
 			{
 				if (intnum[intTem1MIN] == 0)

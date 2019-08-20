@@ -38,3 +38,4 @@ int Sequence(SOUP*,char*,int , int);//为手牌排序，参数1为手牌地址，参数4为手牌数
 int OWTouch(SOUP* pCardGroup, SOUP TEmporary,int* intCardNum);//判定加杠，参数1为手牌地址，参数2为刚得到的牌，
 void GangRecord(char*, SOUP);//用于在字符串中记录杠的牌
 void HUDetermine(SOUP*,int ,SOUP);//判定是否胡牌，参数1为手牌地址，参数2为手牌数目，参数三为刚得到的牌
+void QIRecord(char*, SOUP);

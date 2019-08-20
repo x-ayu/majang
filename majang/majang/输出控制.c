@@ -3,16 +3,8 @@
 #include<stdlib.h>
 #include"masd.h"
 
-int ChOutput(char Output[14][3],int intNumber, int bWay, _Bool bMode, int intInitial, int intEnd,char *pGameSerial)
+int ChOutput(char Output[14][3],int intNumber, int bWay, int bMode, int intInitial, int intEnd,char *pGameSerial)
 {
-	if (intNumber == 4&& pGameSerial==NULL)
-	{
-		Output[0][0] = '1', Output[0][1]='\0';
-		Output[1][0] = '2', Output[1][1] = '\0';
-		Output[2][0] = '3', Output[2][1] = '\0';
-		Output[3][0] = '4', Output[3][1] = '\0';
-		intNumber = 4;
-	}
 	int intInput1, intInput = 0,  intOutput = 1;
 	if (bWay == 0)//œÚ…œ£ª
 	{
