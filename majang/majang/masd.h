@@ -37,5 +37,5 @@ int Touch(SOUP*, SOUP*,int*);//ÅĞ¶¨ÊÇ·ñÅö¸Ü£¬£¬²ÎÊı1ÎªÊÖÅÆµØÖ·£¬²ÎÊı2Îª¸ÕµÃµ½µÄÅ
 int Sequence(SOUP*,char*,int , int);//ÎªÊÖÅÆÅÅĞò£¬²ÎÊı1ÎªÊÖÅÆµØÖ·£¬²ÎÊı4ÎªÊÖÅÆÊıÄ¿£¬Èô²ÎÊı3²»Îª0Ôò»¹¿ØÖÆ³öÅÆ£¬²ÎÊı2Îª³öÅÆÍæ¼ÒÃû
 int OWTouch(SOUP* pCardGroup, SOUP TEmporary,int* intCardNum);//ÅĞ¶¨¼Ó¸Ü£¬²ÎÊı1ÎªÊÖÅÆµØÖ·£¬²ÎÊı2Îª¸ÕµÃµ½µÄÅÆ£¬
 void GangRecord(char*, SOUP);//ÓÃÓÚÔÚ×Ö·û´®ÖĞ¼ÇÂ¼¸ÜµÄÅÆ
-void HUDetermine(SOUP*,int ,SOUP);//ÅĞ¶¨ÊÇ·ñºúÅÆ£¬²ÎÊı1ÎªÊÖÅÆµØÖ·£¬²ÎÊı2ÎªÊÖÅÆÊıÄ¿£¬²ÎÊıÈıÎª¸ÕµÃµ½µÄÅÆ
+void HUDetermine(SOUP*,int ,SOUP,char*);//ÅĞ¶¨ÊÇ·ñºúÅÆ£¬²ÎÊı1ÎªÊÖÅÆµØÖ·£¬²ÎÊı2ÎªÊÖÅÆÊıÄ¿£¬²ÎÊıÈıÎª¸ÕµÃµ½µÄÅÆ
 void QIRecord(char*, SOUP);

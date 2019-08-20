@@ -29,16 +29,23 @@ int ChOutput(char Output[14][3],int intNumber, int bWay, int bMode, int intIniti
 				if (intInput1 == 224) { if ((intInput == 75) || (intInput == 77))break; }
 			}
 			if (intInput1 == 13)break;
-			if ((intInput == 77) && intOutput == intNumber&&bMode!=2)
+			if ((intInput == 77) && intOutput == intNumber&&bMode!=2)/////
 				intOutput = 14;
-			if ((intInput == 75) && intOutput == 14 && bMode != 2)
+			if ((intInput == 75) && intOutput == 14 && bMode != 2)/////
 				intOutput = intNumber+1;
-			if ((intInput == 77) && intOutput < intNumber)
+			if ((intInput == 77) && intOutput < intNumber)//////
 			{
 				intOutput++;
 			}
-			else if ((intInput == 75) && intOutput > 1) {
+			 else if (intInput == 77 && intOutput ==14&&bMode!=2 )//////
+			{
+				intOutput = 1;
+			}
+			 else if ((intInput == 75) && intOutput > 1) {//////
 				intOutput--;
+			}
+			 else if ((intInput == 75) && intOutput == 1 && bMode != 2) {//////
+				intOutput = 14 ;
 			}
 			system("cls");
 			if (pGameSerial != NULL)

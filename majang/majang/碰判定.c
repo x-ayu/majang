@@ -81,8 +81,8 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum)
 
 				pCardGroup[intLS1].chSign = LSCARD1.chSign; pCardGroup[intLS1].inSerial = LSCARD2.inSerial;
 				pCardGroup[intLS1 - 1].chSign = LSCARD2.chSign; pCardGroup[intLS1 - 1].inSerial = LSCARD1.inSerial;
-				*intCardNum -= 2;
-				Sequence(pCardGroup, NULL, 0, *intCardNum);
+				*intCardNum -= 3;
+				Sequence(pCardGroup, NULL, 0, *intCardNum+1);
 				for (int i = 0; i < 13; i++)
 				{
 					chSort[i][0] = pCardGroup[i].inSerial + '0';
@@ -90,11 +90,10 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum)
 					chSort[i][2] = '\0';
 				}
 				chSort[13][0] = TEmporary->inSerial + '0'; chSort[13][1] = TEmporary->chSign; chSort[13][2] = '\0';
-				intLS2 = ChOutput(chSort, *intCardNum, 0, 2, 0, 0, "");
+				intLS2 = ChOutput(chSort, *intCardNum+1, 0, 2, 0, 0, "");
 				TEmporary->chSign = pCardGroup[intLS2 - 1].chSign; TEmporary->inSerial = pCardGroup[intLS2 - 1].inSerial;
-				pCardGroup[intLS2 - 1].chSign = pCardGroup[*intCardNum -1].chSign; pCardGroup[intLS2 - 1].inSerial = pCardGroup[*intCardNum -1].inSerial;
-				pCardGroup[*intCardNum - 1].chSign = pCardGroup[*intCardNum ].chSign; pCardGroup[*intCardNum - 1].inSerial = pCardGroup[*intCardNum ].inSerial;
-				(*intCardNum )--;
+				pCardGroup[intLS2 - 1].chSign = pCardGroup[*intCardNum ].chSign; pCardGroup[intLS2 - 1].inSerial = pCardGroup[*intCardNum ].inSerial;
+				pCardGroup[*intCardNum].chSign = pCardGroup[*intCardNum+1 ].chSign; pCardGroup[*intCardNum ].inSerial = pCardGroup[*intCardNum +1].inSerial;
 				Sequence(pCardGroup, NULL, 0, *intCardNum);
 				system("cls");
 			}

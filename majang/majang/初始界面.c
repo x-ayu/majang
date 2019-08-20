@@ -75,20 +75,23 @@
 		
 	}
 	NAMES name;
+	char namss[25];
 	name.intMode = intOutput;
 	if (intOutput == 1) {
 		system("cls");
-		printf("选择了人人对战\n输入玩家1姓名：");scanf_s("%s", &name.szPlayersName1,24);
+		
+		printf("选择了人人对战\n输入玩家1姓名："); setvbuf(stdin,namss,_IOFBF,24);
+		scanf_s("%s", &name.szPlayersName1, 24);
 		printf("输入玩家2姓名："); scanf_s("%s", &name.szPlayersName2,24);
-		printf("输入玩家3姓名："); scanf_s("%s", &name.szPlayersName3,24);
-		printf("输入玩家4姓名："); scanf_s("%s", &name.szPlayersName4,24);	
+		printf("输入玩家3姓名："); scanf_s("%s", &name.szPlayersName3,24); 
+		printf("输入玩家4姓名："); scanf_s("%s", &name.szPlayersName4,24); 
 		system("cls");
 	}
 	if (intOutput == 2)   {
 		system("cls");
 		printf("选择了人机对战\n选择玩家数目：\n");
-		char nas[14][3] = { {"1"},{"2"},{"3"},{"4"},{" "},{" "},{" "},{" "},{" "},{" "},{" "},{" "},{" "}};
-	intOutput1= ChOutput(nas, 4, 0, 2, 1, 3,NULL);
+		char nas[14][3] = { {"1 "},{"2 "},{"3 "},{"4 "},{" "},{" "},{" "},{" "},{" "},{" "},{" "},{" "},{" "}};
+	intOutput1= ChOutput(nas, 4, 0, 2, 0, 0,NULL);
 	while (intOutput1)
 		{
 		    system("cls");
@@ -114,4 +117,3 @@
 	return name;
 }
 
-	

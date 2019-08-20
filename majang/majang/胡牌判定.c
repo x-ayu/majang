@@ -3,11 +3,10 @@
 #include<stdio.h>
 
 #define SURENU(X) if (X % 3 == 0)X = 0;else if (X % 3 == 2)X = 1;else X = 2;
-#define QUHU {printf("玩家可以和牌,是否和牌？（摁Enter确定并结束游戏，其他键取消）\n");getchar();for (int i = 0; i < 13; i++)printf("%d%c ", pName0[i].inSerial, pName[i].chSign);\
+#define QUHU {printf("玩家%s可以和牌,是否和牌?（摁Enter确定并结束游戏，其他键取消\n",namess);getchar();for (int i = 0; i < 13; i++)printf("%d%c ", pName[i].inSerial, pName[i].chSign);\
 printf("%d%c\n", TEMPORARCARDS.inSerial, TEMPORARCARDS.chSign);if (getchar() == 10)exit(1);}
 int HuPai(char *, int );
-
-void HUDetermine(SOUP* pName, int intCardNum, SOUP TEMPORARCARDS)
+void HUDetermine(SOUP* pName, int intCardNum, SOUP TEMPORARCARDS,char*namess)
 {
 	char chaLSName[14];
 	SOUP pName0[14];
