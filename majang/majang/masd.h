@@ -30,7 +30,7 @@ typedef struct//用于记录模式，玩家名
 
  //函数声明
 NAMES	 _Interface(void);//用于程序最开始的显示
-int ChOutput(char* [], int, int, int, int, int,char*,char*[],char*,char*[],char*,char*[],char*,char*,char*);//用于控制输出，参数1为输出的字符串，//最后一个量表示玩家名称
+int ChOutput(char* [], int, int, int, int, int,char*,char*[],char*,char*[],char*,char*[],char*,char*,char*);//用于控制输出，参数1为输出的字符串
 int* AloneRandom(int, int*);//生成一个不重复的随机数列，参数1为数目，参数2为保存数列的地址
 SOUP Distribute(char* Han);//用于发牌，参数为生成的随机数列
 int Touch(SOUP*, SOUP*, int*,int,char*, SOUP Output1[13], char* pGameSeria2, SOUP Output2[13], char* pGameSeria3, SOUP Output3[13], char* pGameSeria4, char* szQI,char * szBarRecord);//判定是否碰杠，，参数1为手牌地址，参数2为刚得到的牌的地址
