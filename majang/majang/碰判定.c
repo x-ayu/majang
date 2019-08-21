@@ -32,7 +32,7 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum)
 	if (intLS == 3)
 	{
 		SOUP LSCARD1, LSCARD2, LSCARD3;
-		printf("玩家可以杠/碰牌，是否杠牌（1确认碰，0取消碰,取消杠后进行碰判定）\n");
+		printf("玩家可以杠/碰牌，是否杠牌（1确认碰，0取消碰,取消杠判定）\n");
 		ChOutput(chSort, *intCardNum, 2, 1, intLS1 - 1, intLS1+1,"",NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 		for (;;)
 		{
@@ -91,7 +91,7 @@ int Touch(SOUP* pCardGroup, SOUP *TEmporary,int *intCardNum)
 					chSort[i][2] = '\0';
 				}
 				chSort[13][0] = TEmporary->inSerial + '0'; chSort[13][1] = TEmporary->chSign; chSort[13][2] = '\0';
-				intLS2 = ChOutput(chSort, *intCardNum+1, 0, 2, 0, 0, "", NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+				intLS2 = ChOutput(chSort, *intCardNum+1, 0, 2, 3, 0, "", NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 				TEmporary->chSign = pCardGroup[intLS2 - 1].chSign; TEmporary->inSerial = pCardGroup[intLS2 - 1].inSerial;
 				pCardGroup[intLS2 - 1].chSign = pCardGroup[*intCardNum ].chSign; pCardGroup[intLS2 - 1].inSerial = pCardGroup[*intCardNum ].inSerial;
 				pCardGroup[*intCardNum].chSign = pCardGroup[*intCardNum+1 ].chSign; pCardGroup[*intCardNum ].inSerial = pCardGroup[*intCardNum +1].inSerial;

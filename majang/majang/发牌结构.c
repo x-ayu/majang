@@ -3,14 +3,14 @@
 #include<stdlib.h>
 SOUP Distribute(int *Han)
 {
-	static int inX = 0;
+	extern int inX ;
 	if (inX > 135)//发完所有牌后再次发牌将会流局
 	{
 		puts("流局");
 		exit(1);
 	}
-	if(135 - inX<84)
-		printf("剩余牌数%d\n",135-inX);
+	if (135 - inX < 84)
+		printf("剩余牌数%d\n", 135 - inX);
 	SOUP Sards = {0,0};
 	int inY = Han[inX] / 4;
 	if (inY == 0)

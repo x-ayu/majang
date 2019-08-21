@@ -10,7 +10,7 @@ void FaPi(SOUP namm[13], int as)
 		//	if (i == 13)break;
 	}
 }
-
+int inX = 0;
 int main(void)
 {
 	int as[136];
@@ -22,6 +22,7 @@ int main(void)
 	SOUP pName3[14];
 	SOUP pName4[14];
 	FaPi(pName1, as); FaPi(pName2, as); FaPi(pName3, as); FaPi(pName4, as); //为每个玩家发牌
+
 	if (WJ.intMode == 1)
 	{
 		int intRecordPlayer = 0, intPlay, intCardNum1 = 13, intCardNum2 = 13, intCardNum3 = 13, intCardNum4 = 13;
@@ -32,10 +33,10 @@ int main(void)
 		{
 			
 			int intTouchReturnValue;
-			TEMPORARCARDS = Distribute(as);
 			if (inCcontrolPlay == 1)
 			{
-				if (Touch(pName1, &TEMPORARCARDS, &intCardNum1, 1) == 2)
+				TEMPORARCARDS = Distribute(as);
+				if (Touch(pName1, &TEMPORARCARDS, &intCardNum1, 1, WJ.szPlayersName2, pName3, WJ.szPlayersName3, pName4, WJ.szPlayersName4, szQIRecord, chSort) == 2)
 				{
 					GangRecord(szBarRecord[0], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
@@ -66,7 +67,8 @@ int main(void)
 			}
 			if (inCcontrolPlay == 2)
 			{
-				if (Touch(pName2, &TEMPORARCARDS, &intCardNum2, 1) == 2)
+				TEMPORARCARDS = Distribute(as);
+				if (Touch(pName2, &TEMPORARCARDS, &intCardNum2, 1,  WJ.szPlayersName1, pName3, WJ.szPlayersName3, pName4, WJ.szPlayersName4, szQIRecord, chSort) == 2)
 				{
 					GangRecord(szBarRecord[1], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
@@ -97,7 +99,8 @@ int main(void)
 			}
 			if (inCcontrolPlay == 3)
 			{
-				if (Touch(pName3, &TEMPORARCARDS, &intCardNum3, 1) == 2)
+				TEMPORARCARDS = Distribute(as);
+				if (Touch(pName3, &TEMPORARCARDS, &intCardNum3, 1, WJ.szPlayersName1, pName2, WJ.szPlayersName2, pName4, WJ.szPlayersName4, szQIRecord, chSort) == 2)
 				{
 					GangRecord(szBarRecord[2], TEMPORARCARDS);
 					TEMPORARCARDS = Distribute(as);
@@ -128,6 +131,7 @@ int main(void)
 			}
 			if (inCcontrolPlay == 4)
 			{
+				TEMPORARCARDS = Distribute(as);
 				if (Touch(pName4, &TEMPORARCARDS, &intCardNum4, 1) == 2)
 				{
 					GangRecord(szBarRecord[3], TEMPORARCARDS);

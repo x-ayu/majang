@@ -9,8 +9,6 @@
 	char szPlayback[] = { "3.历史回放" };
 	char szGane_end[] = { "4.退出游戏" };
 	int intInput1, intInput=0, intOutput1='\40', intOutput=1;
-
-	
 	printf("选择游戏模式：\n");
 	printf_s("%c", intOutput1);
 	printf_s("%s\n", szRRWar);
@@ -75,16 +73,15 @@
 		
 	}
 	NAMES name; NAMES *names;
-	char namss[25];
 	name.intMode = intOutput;
 	if (intOutput == 1) {
 		system("cls");
 		
-		printf("选择了人人对战\n输入玩家1姓名："); setvbuf(stdin,namss,_IOFBF,24);
-		scanf_s("%s", &name.szPlayersName1, 24);
-		printf("输入玩家2姓名："); scanf_s("%s", &name.szPlayersName2,24);
-		printf("输入玩家3姓名："); scanf_s("%s", &name.szPlayersName3,24); 
-		printf("输入玩家4姓名："); scanf_s("%s", &name.szPlayersName4,24); 
+		printf("选择了人人对战\n输入玩家1姓名："); setvbuf(stdin, NULL, _IONBF, 254);
+		scanf_s("%s", name.szPlayersName1, 254); 
+		printf("输入玩家2姓名："); scanf_s("%s", name.szPlayersName2,254);
+		printf("输入玩家3姓名："); scanf_s("%s", name.szPlayersName3, 254);
+		printf("输入玩家4姓名："); scanf_s("%s", name.szPlayersName4,254); 
 		system("cls");
 	}
 	if (intOutput == 2)   
@@ -117,4 +114,3 @@
 	}
 	return name;
 }
-
