@@ -89,20 +89,20 @@
 		system("cls");
 		printf("选择了人机对战\n选择玩家数目：\n");
 		char nas[14][3] = { {"1 "},{"2 "},{"3 "},{"4 "},{" "},{" "},{" "},{" "},{" "},{" "},{" "},{" "},{" "}};
-	intOutput1= ChOutput(nas, 4, 0, 2, 0, 0,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	intOutput1= ChOutput(nas, 4, 0, 2, 0, 0,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,NULL);
 	while (intOutput1)
 		{
 		    system("cls");
 			static int i =1 ;
 			printf("输入玩家%d姓名：", i);
 			if (i == 1)
-				scanf_s("%s", &name.szPlayersName1, 24);
+				scanf_s("%s", &name.szPlayersName1, 254);
 			if (i == 2)
-				scanf_s("%s", &name.szPlayersName2, 24);
+				scanf_s("%s", &name.szPlayersName2, 254);
 			if (i == 3)
-				scanf_s("%s", &name.szPlayersName3, 24);
+				scanf_s("%s", &name.szPlayersName3, 254);
 			if (i == 4)
-				scanf_s("%s", &name.szPlayersName4, 24);
+				scanf_s("%s", &name.szPlayersName4, 254);
 			i++;
 			intOutput1--;
 		}

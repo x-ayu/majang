@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include"masd.h"
 
-int ChOutput(char Output[14][3],int intNumber, int bWay, int bMode, int intInitial, int intEnd,char *pGameSerial,SOUP Output1[13], char* pGameSeria2, SOUP Output2[13], char* pGameSeria3, SOUP Output3[13], char* pGameSeria4,char*szQI)
+int ChOutput(char Output[14][3],int intNumber, int bWay, int bMode, int intInitial, int intEnd,char *pGameSerial,SOUP Output1[13], char* pGameSeria2, SOUP Output2[13], char* pGameSeria3, SOUP Output3[13], char* pGameSeria4,char*szQI,char* szBarRecord)
 {
 	int intInput1, intInput = 0,  intOutput = 1;
 	extern int inX;
@@ -30,14 +30,14 @@ int ChOutput(char Output[14][3],int intNumber, int bWay, int bMode, int intIniti
 				if (intInput1 == 224) { if ((intInput == 75) || (intInput == 77))break; }
 			}
 			if (intInput1 == 13)break;
-			if ((intInput == 77) && intOutput == intNumber && bMode != 2)/////
+			if ((intInput == 77) && intOutput == intNumber && intInitial != 3)/////
 				intOutput = 14;
-			else if (intInput == 77 && intOutput == 14 && bMode != 2)//////
+			else if (intInput == 77 && intOutput == 14 && intInitial != 3)//////
 			{
 				intOutput = 1;
 			}
 			
-			else if ((intInput == 75) && intOutput == 14 && bMode != 2)/////
+			else if ((intInput == 75) && intOutput == 14 && intInitial != 3)/////
 				intOutput = intNumber;
 			else if ((intInput == 77) && intOutput < intNumber)//////
 			{
@@ -46,18 +46,18 @@ int ChOutput(char Output[14][3],int intNumber, int bWay, int bMode, int intIniti
 			 else if ((intInput == 75) && intOutput > 1) {//////
 				intOutput--;
 			}
-			 else if ((intInput == 75) && intOutput == 1 && bMode != 2) {//////
+			 else if ((intInput == 75) && intOutput == 1 && intInitial != 3) {//////
 				intOutput = 14 ;
 			}
-			 else if ((intInput == 75) && intOutput == 1 && bMode == 2&& intInitial==3)intOutput = intNumber;
-			 else if ((intInput == 77) && intOutput == intNumber && bMode == 2 && intInitial == 3)intOutput = 1;
+			 else if ((intInput == 75) && intOutput == 1 && intInitial==3)intOutput = intNumber;
+			 else if ((intInput == 77) && intOutput == intNumber && intInitial == 3)intOutput = 1;
 			system("cls");
 			if (pGameSerial != NULL)
 			{
 				if (bMode != 2)
 				{
 					if (135 - inX < 84)
-						printf("剩余牌数%d\n", 135 - inX);
+						printf("剩余牌数%d\n", 135 - inX+1);
 					printf("玩家%s手牌:", pGameSeria2);
 					for (int i = 0; i < 13; i++)
 						printf("%d%c ", Output1[i].inSerial, Output1[i].chSign);
@@ -71,6 +71,7 @@ int ChOutput(char Output[14][3],int intNumber, int bWay, int bMode, int intIniti
 						printf("%d%c ", Output3[i].inSerial, Output3[i].chSign);
 					printf("\n");
 					printf("所弃的的牌：\n%s\n", szQI);
+					printf("玩家%s杠的牌：%s\n", pGameSerial, szBarRecord);
 				}
 
 				printf("玩家%s出牌\n", pGameSerial);
