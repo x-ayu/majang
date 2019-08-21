@@ -3,7 +3,7 @@
 #include<stdbool.h>
 
 //预处理
-#define CuPai(A,X,B,T,I) { A[13] = TEMPORARCARDS; printf("玩家"#X"：%s出牌：\n",T);intPlay = Sequence(A,T,1,B);TEMPORARCARDS=I[intPlay - 1] , I[intPlay - 1] = A[13]; }
+#define CuPai(A,X,B,T,Q,W,E,R,Y,U,I,O) {  printf("玩家"#X"：%s出牌：\n",T);intPlay = ChOutput(O,B, 0, 0, 0, 0, T,Q,W,E,R,Y,U,I);TEMPORARCARDS=A[intPlay - 1] , A[intPlay - 1] = A[13]; }
 #define PlayersPengDetermine1 if((intTouchReturnValue=Touch(pName1,&TEMPORARCARDS,&intCardNum1))>0){if(intTouchReturnValue==2){inCcontrolPlay=1;GangRecord(szBarRecord[0], TEMPORARCARDS);intTouchReturnValue=0;continue;}else{inCcontrolPlay=2;}}
 #define PlayersPengDetermine2 if((intTouchReturnValue=Touch(pName2,&TEMPORARCARDS,&intCardNum2))>0){if(intTouchReturnValue==2){inCcontrolPlay=2;GangRecord(szBarRecord[1], TEMPORARCARDS);intTouchReturnValue=0;continue;}else{inCcontrolPlay=3;}}
 #define PlayersPengDetermine3 if((intTouchReturnValue=Touch(pName3,&TEMPORARCARDS,&intCardNum3))>0){if(intTouchReturnValue==2){inCcontrolPlay=3;GangRecord(szBarRecord[2], TEMPORARCARDS);intTouchReturnValue=0;continue;}else{inCcontrolPlay=4;}}
@@ -30,7 +30,7 @@ typedef struct//用于记录模式，玩家名
 
  //函数声明
 NAMES	 _Interface(void);//用于程序最开始的显示
-int ChOutput(char* [], int, int, int, int, int,char*);//用于控制输出，参数1为输出的字符串，最后一个量表示玩家名称
+int ChOutput(char* [], int, int, int, int, int,char*,char*[],char*,char*[],char*,char*[],char*,char*);//用于控制输出，参数1为输出的字符串，最后一个量表示玩家名称
 int* AloneRandom(int, int*);//生成一个不重复的随机数列，参数1为数目，参数2为保存数列的地址
 SOUP Distribute(char* Han);//用于发牌，参数为生成的随机数列
 int Touch(SOUP*, SOUP*,int*);//判定是否碰杠，，参数1为手牌地址，参数2为刚得到的牌的地址

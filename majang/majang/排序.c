@@ -146,7 +146,7 @@ int Sequence( SOUP *pName,char* pGameSerial,int NNN, int intCardNum)
 			pName[i].inSerial = szintNum[i];
 			chSort[i][0] = pName[i].inSerial + '0';
 		}
-		if (NNN != 0)
-			ChOutput(chSort, intCardNum, 0, 0, 0, 0, pGameSerial);//确定出牌
+		//if (NNN != 0)
+		//	ChOutput(chSort, intCardNum, 0, 0, 0, 0, pGameSerial);//确定出牌
 		}
 }

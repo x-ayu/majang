@@ -74,7 +74,7 @@
 		}
 		
 	}
-	NAMES name;
+	NAMES name; NAMES *names;
 	char namss[25];
 	name.intMode = intOutput;
 	if (intOutput == 1) {
@@ -87,11 +87,12 @@
 		printf("输入玩家4姓名："); scanf_s("%s", &name.szPlayersName4,24); 
 		system("cls");
 	}
-	if (intOutput == 2)   {
+	if (intOutput == 2)   
+	{
 		system("cls");
 		printf("选择了人机对战\n选择玩家数目：\n");
 		char nas[14][3] = { {"1 "},{"2 "},{"3 "},{"4 "},{" "},{" "},{" "},{" "},{" "},{" "},{" "},{" "},{" "}};
-	intOutput1= ChOutput(nas, 4, 0, 2, 0, 0,NULL);
+	intOutput1= ChOutput(nas, 4, 0, 2, 0, 0,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 	while (intOutput1)
 		{
 		    system("cls");
